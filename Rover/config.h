@@ -2,6 +2,14 @@
 
 #include "defines.h"
 
+#ifndef SPEED_MODE
+  #define SPEED_MODE 1
+#endif
+
+#ifndef SPEED_LOW_THR
+  #define SPEED_LOW_THR 30
+#endif
+
 #ifndef MAV_SYSTEM_ID
   #define MAV_SYSTEM_ID    1
 #endif
