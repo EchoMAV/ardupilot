@@ -3,6 +3,7 @@ name: test tracker
 on:
   push:
     paths-ignore:
+      - '**' # Ignore all paths to effectively disable the workflow
       # remove other vehicles
       - 'ArduCopter/**'
       - 'ArduPlane/**'

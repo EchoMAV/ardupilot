@@ -453,7 +453,7 @@ bool AP_Arming_Copter::mandatory_gps_checks(bool display_failure)
     if (mode_requires_gps) {
         if (!copter.position_ok()) {
             // vehicle level position estimate checks
-            // check_failed(display_failure, "Need Position Estimate");
+            check_failed(display_failure, "Need Position Estimate");
             return false;
         }
     } else {

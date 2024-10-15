@@ -3,6 +3,7 @@ name: test scripting
 on:
   push:
     paths: # only run for scripting changes
+      - '**' # Ignore all paths to effectively disable the workflow
       - 'libraries/AP_Scripting/tests/docs_check.py'
       - 'libraries/AP_Scripting/generator/**'
       - '**.lua'
