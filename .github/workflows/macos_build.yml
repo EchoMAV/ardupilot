@@ -3,6 +3,7 @@ name: Macos Build
 on:
   push:
     paths-ignore:
+      - '**' # Ignore all paths to effectively disable the workflow
       # remove other env install scripts
       - 'Tools/environment_install/APM_install.sh'
       - 'Tools/environment_install/install-ROS-ubuntu.sh'
@@ -69,6 +70,7 @@ on:
 
   pull_request:
     paths-ignore:
+      - '**' # Ignore all paths to effectively disable the workflow
       # remove other env install scripts
       - 'Tools/environment_install/APM_install.sh'
       - 'Tools/environment_install/install-ROS-ubuntu.sh'

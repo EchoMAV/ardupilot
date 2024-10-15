@@ -3,6 +3,7 @@ name: test dds
 on:
   push:
     paths-ignore:
+      - '**' # Ignore all paths to effectively disable the workflow
       # remove not tests vehicles
       - 'AntennaTracker/**'
       - 'ArduSub/**'

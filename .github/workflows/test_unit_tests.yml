@@ -3,6 +3,7 @@ name: test unit tests and sitl building
 on:
   push:
     paths-ignore:
+      - '**' # Ignore all paths to effectively disable the workflow
       # Remove markdown files as irrelevant
       - '**.md'
       # Remove dotfile at root directory

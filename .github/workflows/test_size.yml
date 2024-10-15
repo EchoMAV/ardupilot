@@ -3,6 +3,7 @@ name: test size
 on:
   pull_request:
     paths-ignore:  # ignore autotest stuffs
+      - '**' # Ignore all paths to effectively disable the workflow
       - 'Tools/autotest/**'
       # Remove markdown files as irrelevant
       - '**.md'

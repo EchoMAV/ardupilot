@@ -1,4 +1,5 @@
 #include "Copter.h"
+#include "defines.h"
 
 #if MODE_LOITER_ENABLED == ENABLED
 
@@ -9,6 +10,8 @@
 // loiter_init - initialise loiter controller
 bool ModeLoiter::init(bool ignore_checks)
 {
+    set_ekf3_source();
+
     if (!copter.failsafe.radio) {
         float target_roll, target_pitch;
         // apply SIMPLE mode transform to pilot inputs
@@ -39,6 +42,12 @@ bool ModeLoiter::init(bool ignore_checks)
 #endif
 
     return true;
+}
+
+void ModeLoiter::set_ekf3_source()
+{
+    // set primary GPS source for position control
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
 }
 
 #if AC_PRECLAND_ENABLED

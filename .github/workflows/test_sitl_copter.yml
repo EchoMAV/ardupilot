@@ -3,6 +3,7 @@ name: test copter
 on:
   push:
     paths-ignore:
+      - '**' # Ignore all paths to effectively disable the workflow
       # remove other vehicles
       - 'AntennaTracker/**'
       - 'ArduPlane/**'

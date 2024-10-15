@@ -95,6 +95,7 @@ public:
         AUTOROTATE =   26,  // Autonomous autorotation
         AUTO_RTL =     27,  // Auto RTL, this is not a true mode, AUTO will report as this mode if entered to perform a DO_LAND_START Landing sequence
         TURTLE =       28,  // Flip over after crash
+        OPTICAL_FLOW = 99,  // Optical flow "loiter"
 
         // Mode number 127 reserved for the "drone show mode" in the Skybrush
         // fork at https://github.com/skybrush-io/ardupilot
@@ -1240,6 +1241,7 @@ protected:
     uint32_t wp_distance() const override;
     int32_t wp_bearing() const override;
     float crosstrack_error() const override { return pos_control->crosstrack_error();}
+    virtual void set_ekf3_source();
 
 #if AC_PRECLAND_ENABLED
     bool do_precision_loiter();
@@ -1255,6 +1257,21 @@ private:
 
 };
 
+class ModeOpticalFlow : public ModeLoiter {
+    // Custom EchoMAV flight mode which is mostly inherited from Loiter mode.
+
+public:
+    Number mode_number() const override { return Number::OPTICAL_FLOW; }
+    bool init(bool ignore_checks) override;
+
+    bool requires_GPS() const override { return false; }
+
+protected:
+
+    const char *name() const override { return "OPTICAL_FLOW"; }
+    const char *name4() const override { return "OFLW"; }
+    void set_ekf3_source() override;
+};
 
 class ModePosHold : public Mode {
 
