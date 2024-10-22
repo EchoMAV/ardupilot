@@ -15,6 +15,11 @@
 #define MULTICOPTER_FRAME 1
 #define HELI_FRAME 2
 
+// EKF3 lane types
+#define PRIMARY_SOURCE 0 // GPS
+#define SECONDARY_SOURCE 1 // Optical Flow
+
+
 // Tuning enumeration
 enum tuning_func {
     TUNING_NONE =                        0, //

@@ -3,6 +3,7 @@ name: ESP32 Build
 on:
   push:
     paths-ignore:
+      - '**' # Ignore all paths to effectively disable the workflow
       # remove non copter and plane vehicles
       - 'AntennaTracker/**'
       - 'ArduSub/**'

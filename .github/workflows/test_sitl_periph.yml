@@ -3,6 +3,7 @@ name: test ap_periph
 on: 
   push:
     paths-ignore:
+      - '**' # Ignore all paths to effectively disable the workflow
       # remove other vehicles than copter
       - 'AntennaTracker/**'
       - 'ArduPlane/**'
@@ -78,6 +79,7 @@ on:
 
   pull_request:
     paths-ignore:
+      - '**' # Ignore all paths to effectively disable the workflow
       # remove other vehicles than copter
       - 'AntennaTracker/**'
       - 'ArduPlane/**'
