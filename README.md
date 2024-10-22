@@ -1,11 +1,11 @@
 # EchoMAV
-* This is a forked repo of Ardupilot. Modifications required for EchoMAV UAVs should be made here. For the EchoLite quadcopter, out branch is `echolite`. It should stay synced with `Copter-X.Y.Z` tags.
+* This is a forked repo of Ardupilot. Modifications required for EchoMAV UAVs should be made here. For the EchoLite quadcopter, our branch is `echolite`. It should stay synced with `Copter-X.Y.Z` tags.
 ```
 git remote add upstream https://github.com/ArduPilot/ardupilot.git
 git fetch upstream --tags
 git checkout echolite
 git merge Copter-X.Y.Z
-Resolved conflicts and commit
+Resolve conflicts and commit
 ```
 
 # ArduPilot Project
