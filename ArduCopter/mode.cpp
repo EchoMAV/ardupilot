@@ -67,12 +67,6 @@ Mode *Copter::mode_from_mode_num(const Mode::Number mode)
             break;
 #endif
 
-#if MODE_OPTICAL_FLOW_ENABLED == ENABLED
-        case Mode::Number::OPTICAL_FLOW:
-            ret = &mode_optical_flow;
-            break;
-#endif
-
 #if MODE_GUIDED_ENABLED == ENABLED
         case Mode::Number::GUIDED:
             ret = &mode_guided;
@@ -150,9 +144,8 @@ Mode *Copter::mode_from_mode_num(const Mode::Number mode)
 #endif
 
 #if MODE_FLOWHOLD_ENABLED == ENABLED
-    // We are forcing FLOWHOLD to be the same as OPTICAL_FLOW for the sake of ATAK
         case Mode::Number::FLOWHOLD:
-            ret = &mode_optical_flow; // this is NOT the original FLOWHOLD pointer
+            ret = &mode_flowhold;
             break;
 #endif
 
@@ -216,7 +209,6 @@ bool Copter::gcs_mode_enabled(const Mode::Number mode_num)
         (uint8_t)Mode::Number::AUTO,
         (uint8_t)Mode::Number::GUIDED,
         (uint8_t)Mode::Number::LOITER,
-        (uint8_t)Mode::Number::OPTICAL_FLOW,
         (uint8_t)Mode::Number::CIRCLE,
         (uint8_t)Mode::Number::DRIFT,
         (uint8_t)Mode::Number::SPORT,

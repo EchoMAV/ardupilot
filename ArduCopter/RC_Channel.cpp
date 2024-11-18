@@ -409,19 +409,6 @@ bool RC_Channel_Copter::do_aux_function(const aux_func_t ch_option, const AuxSwi
                     break;
             }
 #endif
-#if AC_PRECLAND_ENABLED && MODE_OPTICAL_FLOW_ENABLED == ENABLED
-            switch (ch_flag) {
-                case AuxSwitchPos::HIGH:
-                    copter.mode_optical_flow.set_precision_loiter_enabled(true);
-                    break;
-                case AuxSwitchPos::MIDDLE:
-                    // nothing
-                    break;
-                case AuxSwitchPos::LOW:
-                    copter.mode_optical_flow.set_precision_loiter_enabled(false);
-                    break;
-            }
-#endif
             break;
 
         case AUX_FUNC::SMART_RTL:
