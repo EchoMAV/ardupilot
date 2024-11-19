@@ -585,11 +585,6 @@ public:
     ToyMode toy_mode;
 #endif
 
-#if MODE_FLOWHOLD_ENABLED
-    // we need a pointer to the mode for the G2 table
-    void *mode_flowhold_ptr;
-#endif
-
 #if MODE_FOLLOW_ENABLED == ENABLED
     // follow
     AP_Follow follow;

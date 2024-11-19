@@ -409,6 +409,19 @@ bool RC_Channel_Copter::do_aux_function(const aux_func_t ch_option, const AuxSwi
                     break;
             }
 #endif
+#if AC_PRECLAND_ENABLED && MODE_FLOWHOLD_ENABLED == ENABLED
+            switch (ch_flag) {
+                case AuxSwitchPos::HIGH:
+                    copter.mode_flowhold.set_precision_loiter_enabled(true);
+                    break;
+                case AuxSwitchPos::MIDDLE:
+                    // nothing
+                    break;
+                case AuxSwitchPos::LOW:
+                    copter.mode_flowhold.set_precision_loiter_enabled(false);
+                    break;
+            }
+#endif
             break;
 
         case AUX_FUNC::SMART_RTL:
@@ -515,12 +528,6 @@ bool RC_Channel_Copter::do_aux_function(const aux_func_t ch_option, const AuxSwi
         case AUX_FUNC::ACRO:
 #if MODE_ACRO_ENABLED == ENABLED
             do_aux_function_change_mode(Mode::Number::ACRO, ch_flag);
-#endif
-            break;
-
-        case AUX_FUNC::FLOWHOLD:
-#if MODE_FLOWHOLD_ENABLED
-            do_aux_function_change_mode(Mode::Number::FLOWHOLD, ch_flag);
 #endif
             break;
 
