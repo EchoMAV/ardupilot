@@ -88,14 +88,14 @@ public:
         AVOID_ADSB =   19,  // automatic avoidance of obstacles in the macro scale - e.g. full-sized aircraft
         GUIDED_NOGPS = 20,  // guided mode but only accepts attitude and altitude
         SMART_RTL =    21,  // SMART_RTL returns to home by retracing its steps
-        FLOWHOLD  =    22,  // FLOWHOLD holds position with optical flow without rangefinder
+        FLOWHOLD  =    99,  // NOTE: set to bogus value 99 (FLOWHOLD is experimental and tries to hold position with optical flow without rangefinder)
         FOLLOW    =    23,  // follow attempts to follow another vehicle or ground station
         ZIGZAG    =    24,  // ZIGZAG mode is able to fly in a zigzag manner with predefined point A and point B
         SYSTEMID  =    25,  // System ID mode produces automated system identification signals in the controllers
         AUTOROTATE =   26,  // Autonomous autorotation
         AUTO_RTL =     27,  // Auto RTL, this is not a true mode, AUTO will report as this mode if entered to perform a DO_LAND_START Landing sequence
         TURTLE =       28,  // Flip over after crash
-        OPTICAL_FLOW = 99,  // Optical flow "loiter"
+        OPTICAL_FLOW = 22,  // Optical flow "loiter" and steals the stock FLOWHOLD value of 22 for ATAK compatiblity
 
         // Mode number 127 reserved for the "drone show mode" in the Skybrush
         // fork at https://github.com/skybrush-io/ardupilot
