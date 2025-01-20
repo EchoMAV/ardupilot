@@ -5,7 +5,7 @@
 
 bool ModeFlowHold::init(bool ignore_checks)
 {
-    return ModeFlowHold::init(ignore_checks);
+    return ModeLoiter::init(ignore_checks);
 }
 
 void ModeFlowHold::set_ekf3_source()
