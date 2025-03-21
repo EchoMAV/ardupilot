@@ -30,5 +30,3 @@ ARMING_CHECK 158
 RTL_ALT 6000
 #set GCS failsafe to SmartRTL or RTL
 FS_GCS_ENABLE 3
-
-
