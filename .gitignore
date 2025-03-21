@@ -111,6 +111,7 @@ GPATH
 GRTAGS
 GTAGS
 *.apj
+!arducopter.apj
 .gdbinit
 .vscode/*
 !.vscode/extensions.json
