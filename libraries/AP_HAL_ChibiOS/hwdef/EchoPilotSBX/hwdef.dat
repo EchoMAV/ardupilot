@@ -1,4 +1,5 @@
-# HW Definition for EchoMAV EchoPilot SBX Rev2
+# HW Definition for EchoMAV EchoPilot SBX Rev2 and Rev2A
+# In this file, the internal compass is purposely set to the wrong address, and external I2C compassses are not probed
 # The EchoPilot SBX combines an FMU with an RPi4 CM companion computer
 # STM32H743
 # EchoMAV, LLC
