@@ -16,6 +16,7 @@
 // initialise follow mode
 bool ModeFollow::init(const bool ignore_checks)
 {
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
     if (!g2.follow.enabled()) {
         gcs().send_text(MAV_SEVERITY_WARNING, "Set FOLL_ENABLE = 1");
         return false;

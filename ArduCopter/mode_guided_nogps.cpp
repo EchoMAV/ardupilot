@@ -9,6 +9,7 @@
 // initialise guided_nogps controller
 bool ModeGuidedNoGPS::init(bool ignore_checks)
 {
+    ahrs.set_posvelyaw_source_set(SECONDARY_SOURCE);
     // start in angle control mode
     ModeGuided::angle_control_start();
     return true;

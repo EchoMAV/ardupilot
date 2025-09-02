@@ -300,6 +300,9 @@ PG0 HW_VER_REV_DRIVE OUTPUT LOW
 # PC2 HW_VER_SENS ADC3 SCALE(1)
 # PC3 HW_REV_SENS ADC3 SCALE(1)
 
+# load default params
+define DEFAULT_PARAMETERS MONARK-defaults.parm
+
 # enable RAMTROM parameter storage
 define HAL_STORAGE_SIZE 32768
 define HAL_WITH_RAMTRON 1

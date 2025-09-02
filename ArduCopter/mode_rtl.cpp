@@ -12,6 +12,7 @@
 // rtl_init - initialise rtl controller
 bool ModeRTL::init(bool ignore_checks)
 {
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
     if (!ignore_checks) {
         if (!AP::ahrs().home_is_set()) {
             return false;

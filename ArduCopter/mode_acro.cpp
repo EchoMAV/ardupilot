@@ -71,6 +71,7 @@ void ModeAcro::run()
 
 bool ModeAcro::init(bool ignore_checks)
 {
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
     if (g2.acro_options.get() & uint8_t(AcroOptions::AIR_MODE)) {
         disable_air_mode_reset = false;
         copter.air_mode = AirMode::AIRMODE_ENABLED;
