@@ -5,6 +5,11 @@
  for development of a custom solution
 --]]
 
+<<<<<<< HEAD
+=======
+---@diagnostic disable: param-type-mismatch
+
+>>>>>>> Copter-4.6.2
 local PARAM_TABLE_KEY = 12
 local PARAM_TABLE_PREFIX = "PLND_"
 

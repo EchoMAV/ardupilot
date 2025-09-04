@@ -1,9 +1,7 @@
 #include "Copter.h"
-#include "defines.h"
-#include "AP_Baro/AP_Baro.h"       // Include Barometer header
-#include "AP_AHRS/AP_AHRS.h"       // AHRS for relative altitude
-extern Copter copter;
-#if MODE_FLOWHOLD_ENABLED == ENABLED
+#include <utility>
+
+#if MODE_FLOWHOLD_ENABLED
 
 bool ModeFlowHold::init(bool ignore_checks)
 {

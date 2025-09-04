@@ -4,6 +4,13 @@
  See this post for details: https://discuss.ardupilot.org/t/ship-landing-support
 --]]
 
+<<<<<<< HEAD
+=======
+---@diagnostic disable: param-type-mismatch
+---@diagnostic disable: cast-local-type
+---@diagnostic disable: need-check-nil
+
+>>>>>>> Copter-4.6.2
 local MAV_SEVERITY = {EMERGENCY=0, ALERT=1, CRITICAL=2, ERROR=3, WARNING=4, NOTICE=5, INFO=6, DEBUG=7}
 
 local PARAM_TABLE_KEY = 7

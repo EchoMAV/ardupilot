@@ -1,3 +1,9 @@
 # setup for LEDs on chan9
 SERVO13_FUNCTION 120
 NTF_LED_TYPES 257
+<<<<<<< HEAD
+=======
+
+#enable CAN port
+CAN_P1_DRIVER 1
+>>>>>>> Copter-4.6.2

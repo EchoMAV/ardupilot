@@ -11,8 +11,13 @@ APJ_BOARD_ID 2000
 
 FLASH_SIZE_KB 2048
 
+<<<<<<< HEAD
 # with 2M flash we can afford to optimize for speed
 env OPTIMIZE -O2
+=======
+# 
+env OPTIMIZE -Os
+>>>>>>> Copter-4.6.2
 
 # ChibiOS system timer
 STM32_ST_USE_TIMER 2
@@ -194,7 +199,11 @@ define HAL_DEFAULT_INS_FAST_SAMPLE 7
 
 # compasses
 define HAL_PROBE_EXTERNAL_I2C_COMPASSES
+<<<<<<< HEAD
 COMPASS LIS3MDL I2C:ALL_INTERNAL:0x1C false ROTATION_NONE
+=======
+COMPASS LIS3MDL I2C:ALL_INTERNAL:0x1C false ROTATION_ROLL_180
+>>>>>>> Copter-4.6.2
 
 
 #LEDs
