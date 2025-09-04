@@ -3,7 +3,7 @@
 ```
 git remote add upstream https://github.com/ArduPilot/ardupilot.git
 git fetch upstream --tags
-git checkout echolite
+git checkout monark
 git merge Copter-X.Y.Z
 Resolve conflicts and commit
 ```
