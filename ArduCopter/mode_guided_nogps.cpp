@@ -10,7 +10,7 @@
 // initialise guided_nogps controller
 bool ModeGuidedNoGPS::init(bool ignore_checks)
 {
-    ahrs.set_posvelyaw_source_set(TERTIARY_SOURCE);
+    ahrs.set_posvelyaw_source_set(static_cast<AP_NavEKF_Source::SourceSetSelection>(EkfSourceSet::TERTIARY_SOURCE));
 
     // start in angle control mode
     ModeGuided::angle_control_start();

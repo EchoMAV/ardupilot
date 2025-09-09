@@ -16,7 +16,7 @@ bool ModeThrow::init(bool ignore_checks)
         return false;
     }
 
-    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+    ahrs.set_posvelyaw_source_set(static_cast<AP_NavEKF_Source::SourceSetSelection>(EkfSourceSet::PRIMARY_SOURCE));
 
     // init state
     stage = Throw_Disarmed;

@@ -10,7 +10,7 @@
 // loiter_init - initialise loiter controller
 bool ModeLoiter::init(bool ignore_checks)
 {
-    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+    ahrs.set_posvelyaw_source_set(static_cast<AP_NavEKF_Source::SourceSetSelection>(EkfSourceSet::PRIMARY_SOURCE));
 
     if (!copter.failsafe.radio) {
         float target_roll, target_pitch;

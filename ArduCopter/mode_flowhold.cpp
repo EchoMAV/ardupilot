@@ -89,7 +89,7 @@ bool ModeFlowHold::init(bool ignore_checks)
         return false;
     }
 
-    ahrs.set_posvelyaw_source_set(SECONDARY_SOURCE);
+    ahrs.set_posvelyaw_source_set(static_cast<AP_NavEKF_Source::SourceSetSelection>(EkfSourceSet::SECONDARY_SOURCE));
 
     // set vertical speed and acceleration limits
     pos_control->set_max_speed_accel_z(-get_pilot_speed_dn(), g.pilot_speed_up, g.pilot_accel_z);

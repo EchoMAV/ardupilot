@@ -21,8 +21,8 @@ bool ModeFollow::init(const bool ignore_checks)
         gcs().send_text(MAV_SEVERITY_WARNING, "Set FOLL_ENABLE = 1");
         return false;
     }
-    
-    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+
+    ahrs.set_posvelyaw_source_set(static_cast<AP_NavEKF_Source::SourceSetSelection>(EkfSourceSet::PRIMARY_SOURCE));
 
 #if HAL_MOUNT_ENABLED
     AP_Mount *mount = AP_Mount::get_singleton();

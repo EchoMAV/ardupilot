@@ -9,7 +9,7 @@
 
 bool AutoTune::init()
 {
-    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+    ahrs.set_posvelyaw_source_set(static_cast<AP_NavEKF_Source::SourceSetSelection>(EkfSourceSet::PRIMARY_SOURCE));
 
     // only allow AutoTune from some flight modes, for example Stabilize, AltHold,  PosHold or Loiter modes
     if (!copter.flightmode->allows_autotune()) {
