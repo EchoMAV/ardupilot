@@ -10,9 +10,6 @@ MCU STM32H7xx STM32H743xx
 # crystal frequency
 OSCILLATOR_HZ 16000000
 
-# not sure what this is doing, try removing
-define HAL_CHIBIOS_ARCH_FMUV5 1
-
 # board ID for firmware load
 APJ_BOARD_ID 5502
 
@@ -292,6 +289,7 @@ PC6 LED_GREEN OUTPUT GPIO(91) LOW
 PC7 LED_BLUE  OUTPUT GPIO(92) LOW
 
 # Pre 4.6.2 ardupilot definitions
+# define HAL_CHIBIOS_ARCH_FMUV5 1
 # define HAL_HAVE_PIXRACER_LED
 # define HAL_GPIO_A_LED_PIN 90
 # define HAL_GPIO_B_LED_PIN 91
