@@ -1,4 +1,5 @@
 #include "Copter.h"
+#include "defines.h"
 
 #if MODE_LOITER_ENABLED
 
@@ -9,6 +10,8 @@
 // loiter_init - initialise loiter controller
 bool ModeLoiter::init(bool ignore_checks)
 {
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+
     if (!copter.failsafe.radio) {
         float target_roll, target_pitch;
         // apply SIMPLE mode transform to pilot inputs

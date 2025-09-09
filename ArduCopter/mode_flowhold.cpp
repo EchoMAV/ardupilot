@@ -1,5 +1,6 @@
 #include "Copter.h"
 #include <utility>
+#include "defines.h"
 
 #if MODE_FLOWHOLD_ENABLED
 
@@ -87,6 +88,8 @@ bool ModeFlowHold::init(bool ignore_checks)
     if (!copter.optflow.enabled() || !copter.optflow.healthy()) {
         return false;
     }
+
+    ahrs.set_posvelyaw_source_set(SECONDARY_SOURCE);
 
     // set vertical speed and acceleration limits
     pos_control->set_max_speed_accel_z(-get_pilot_speed_dn(), g.pilot_speed_up, g.pilot_accel_z);

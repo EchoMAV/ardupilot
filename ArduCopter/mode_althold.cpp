@@ -1,4 +1,5 @@
 #include "Copter.h"
+#include "defines.h"
 
 
 /*
@@ -8,6 +9,7 @@
 // althold_init - initialise althold controller
 bool ModeAltHold::init(bool ignore_checks)
 {
+    ahrs.set_posvelyaw_source_set(TERTIARY_SOURCE);
 
     // initialise the vertical position controller
     if (!pos_control->is_active_z()) {

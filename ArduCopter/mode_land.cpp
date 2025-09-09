@@ -3,6 +3,9 @@
 // land_init - initialise land controller
 bool ModeLand::init(bool ignore_checks)
 {
+    // do not change the source so that if they are in loiter -> land we keep primary.
+    // If they are in optical flow -> land we keep secondary etc.
+
     // check if we have GPS and decide which LAND we're going to do
     control_position = copter.position_ok();
 

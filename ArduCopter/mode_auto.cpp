@@ -1,4 +1,5 @@
 #include "Copter.h"
+#include "defines.h"
 
 #if MODE_AUTO_ENABLED
 
@@ -22,6 +23,8 @@
 // auto_init - initialise auto controller
 bool ModeAuto::init(bool ignore_checks)
 {
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+
     auto_RTL = false;
     if (mission.num_commands() > 1 || ignore_checks) {
         // reject switching to auto mode if landed with motors armed but first command is not a takeoff (reduce chance of flips)

@@ -1,4 +1,5 @@
 #include "Copter.h"
+#include "defines.h"
 
 #if MODE_RTL_ENABLED
 
@@ -17,6 +18,9 @@ bool ModeRTL::init(bool ignore_checks)
             return false;
         }
     }
+
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+    
     // initialise waypoint and spline controller
     wp_nav->wp_and_spline_init(g.rtl_speed_cms);
     _state = SubMode::STARTING;

@@ -1,4 +1,5 @@
 #include "Copter.h"
+#include "defines.h"
 
 #if MODE_GUIDED_NOGPS_ENABLED
 
@@ -9,6 +10,8 @@
 // initialise guided_nogps controller
 bool ModeGuidedNoGPS::init(bool ignore_checks)
 {
+    ahrs.set_posvelyaw_source_set(TERTIARY_SOURCE);
+
     // start in angle control mode
     ModeGuided::angle_control_start();
     return true;

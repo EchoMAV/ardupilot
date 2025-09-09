@@ -1,4 +1,5 @@
 #include "Copter.h"
+#include "defines.h"
 
 #if MODE_THROW_ENABLED
 
@@ -14,6 +15,8 @@ bool ModeThrow::init(bool ignore_checks)
     if (motors->armed()) {
         return false;
     }
+
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
 
     // init state
     stage = Throw_Disarmed;
