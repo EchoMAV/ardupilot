@@ -7,10 +7,11 @@
 #define MULTICOPTER_FRAME 1
 #define HELI_FRAME 2
 
-// EKF3 lane types
-#define PRIMARY_SOURCE 0 // GPS for XYZ
-#define SECONDARY_SOURCE 1 // Optical Flow for XY - Range Finder for Z
-#define TERTIARY_SOURCE 2 // No XY - Barometer for Z
+enum EkfSourceSet {
+    PRIMARY_SOURCE   = 0, // GPS for XYZ
+    SECONDARY_SOURCE = 1, // Optical Flow XY + Range Finder Z
+    TERTIARY_SOURCE  = 2  // No XY, Barometer for Z
+};
 
 // Tuning enumeration
 enum tuning_func {
