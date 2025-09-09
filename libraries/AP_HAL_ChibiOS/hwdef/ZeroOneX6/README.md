@@ -1,10 +1,7 @@
 ## ZeroOneX6 Flight Controller
 The ZeroOne X6 is a flight controller manufactured by ZeroOne, which is based on the open-source FMU v6X architecture and Pixhawk Autopilot Bus open source specifications.
-<<<<<<< HEAD
-=======
 ![Uploading ZeroOneX6.jpg…]()
 
->>>>>>> Copter-4.6.2
 
 ## Features:
 - Separate flight control core design.

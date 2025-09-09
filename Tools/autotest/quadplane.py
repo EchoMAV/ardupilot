@@ -1503,14 +1503,8 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
 
     def PrecisionLanding(self):
         '''VTOL precision landing'''
-<<<<<<< HEAD
-        applet_script = "plane_precland.lua"
-
-        self.install_applet_script(applet_script)
-=======
 
         self.install_applet_script_context("plane_precland.lua")
->>>>>>> Copter-4.6.2
 
         here = self.mav.location()
         target = self.offset_location_ne(here, 20, 0)
@@ -1534,21 +1528,13 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
 
         self.reboot_sitl()
 
-<<<<<<< HEAD
-        self.context_push()
-        self.context_collect('STATUSTEXT')
-=======
->>>>>>> Copter-4.6.2
         self.set_parameters({
             "PLND_ALT_CUTOFF" : 5,
             "SIM_SPEEDUP" : 10,
             })
 
-<<<<<<< HEAD
-=======
         self.context_collect('STATUSTEXT')
 
->>>>>>> Copter-4.6.2
         self.scripting_restart()
         self.wait_text("PLND: Loaded", check_context=True)
 
@@ -1569,21 +1555,9 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
         if error > 2:
             raise NotAchievedException("too far from target %.1fm" % error)
 
-<<<<<<< HEAD
-        self.context_pop()
-        self.remove_installed_script(applet_script)
-        self.reboot_sitl()
-
-    def ShipLanding(self):
-        '''ship landing test'''
-        applet_script = "plane_ship_landing.lua"
-
-        self.install_applet_script(applet_script)
-=======
     def ShipLanding(self):
         '''ship landing test'''
         self.install_applet_script_context("plane_ship_landing.lua")
->>>>>>> Copter-4.6.2
 
         self.set_parameters({
             "SCR_ENABLE": 1,
@@ -1601,10 +1575,6 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
 
         self.reboot_sitl(check_position=False)
 
-<<<<<<< HEAD
-        self.context_push()
-=======
->>>>>>> Copter-4.6.2
         self.context_collect('STATUSTEXT')
         self.set_parameters({
             "SHIP_ENABLE" : 1,
@@ -1633,13 +1603,6 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
         # with the deck
         self.wait_groundspeed(4.8, 5.2)
 
-<<<<<<< HEAD
-        self.context_pop()
-        self.remove_installed_script(applet_script)
-        self.reboot_sitl(check_position=False)
-
-=======
->>>>>>> Copter-4.6.2
     def RCDisableAirspeedUse(self):
         '''check disabling airspeed using RC switch'''
         self.set_parameter("RC9_OPTION", 106)
@@ -1966,8 +1929,6 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
             timeout=120,
         )
 
-<<<<<<< HEAD
-=======
     def AHRSFlyForwardFlag(self):
         '''ensure FlyForward flag is set appropriately'''
         self.set_parameters({
@@ -2103,7 +2064,6 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
 
             raise NotAchievedException("Bad stage")
 
->>>>>>> Copter-4.6.2
     def RTL_AUTOLAND_1_FROM_GUIDED(self):
         '''test behaviour when RTL_AUTOLAND==1 and entering from guided'''
 
@@ -2150,8 +2110,6 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
 
         self.fly_home_land_and_disarm()
 
-<<<<<<< HEAD
-=======
     def WindEstimateConsistency(self):
         '''test that DCM and EKF3 roughly agree on wind speed and direction'''
         self.set_parameters({
@@ -2654,7 +2612,6 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
         self.mav.motors_disarmed_wait()
         self.reset_SITL_commandline()
 
->>>>>>> Copter-4.6.2
     def tests(self):
         '''return list of all tests'''
 
@@ -2687,10 +2644,7 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
             self.LoiterAltQLand,
             self.VTOLLandSpiral,
             self.VTOLQuicktune,
-<<<<<<< HEAD
-=======
             self.VTOLQuicktune_CPP,
->>>>>>> Copter-4.6.2
             self.PrecisionLanding,
             self.ShipLanding,
             Test(self.MotorTest, kwargs={  # tests motors 4 and 2
@@ -2709,14 +2663,11 @@ class AutoTestQuadPlane(vehicle_test_suite.TestSuite):
             self.DCMClimbRate,
             self.RTL_AUTOLAND_1,  # as in fly-home then go to landing sequence
             self.RTL_AUTOLAND_1_FROM_GUIDED,  # as in fly-home then go to landing sequence
-<<<<<<< HEAD
-=======
             self.AHRSFlyForwardFlag,
             self.DoRepositionTerrain,
             self.DoRepositionTerrain2,
             self.QLoiterRecovery,
             self.FastInvertedRecovery,
             self.CruiseRecovery,
->>>>>>> Copter-4.6.2
         ])
         return ret

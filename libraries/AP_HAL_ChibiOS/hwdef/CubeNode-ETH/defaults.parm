@@ -1,9 +1,5 @@
 NET_ENABLE 1
-<<<<<<< HEAD:libraries/AP_HAL_ChibiOS/hwdef/CubePilot-PPPGW/defaults.parm
-NET_OPTIONS 1
-=======
 NET_OPTIONS 3
->>>>>>> Copter-4.6.2:libraries/AP_HAL_ChibiOS/hwdef/CubeNode-ETH/defaults.parm
 
 # enable hw flow control
 UART1_RTSCTS 1

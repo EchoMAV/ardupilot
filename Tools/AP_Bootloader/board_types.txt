@@ -280,15 +280,6 @@ AP_HW_MicoAir405Mini                 1161
 AP_HW_BlitzH7Pro                     1162
 AP_HW_BlitzF7Mini                    1163
 AP_HW_BlitzF7                        1164
-<<<<<<< HEAD
-AP_HW_MicoAir743                     1166
-AP_HW_BlitzH7Wing                    1168
-AP_HW_SDMODELH7V2                    1167
-
-AP_HW_JHEMCUF405WING                 1169
-AP_HW_MatekG474                      1170
-AP_HW_2RAWH743                       1173
-=======
 AP_HW_3DR-ASAUAV                     1165
 AP_HW_MicoAir743                     1166
 AP_HW_BlitzH7Wing                    1168
@@ -323,7 +314,6 @@ AP_HW_SPEDIXF405                     1197
 AP_HW_AEDROXH7                       1198
 
 AP_HW_JFB200                         1200
->>>>>>> Copter-4.6.2
 
 AP_HW_ESP32_PERIPH                   1205
 AP_HW_ESP32S3_PERIPH                 1206
@@ -356,11 +346,6 @@ AP_HW_LongbowF405                    1422
 
 AP_HW_MountainEagleH743              1444
 
-<<<<<<< HEAD
-AP_HW_MFT-SEMA100                    2000
-
-AP_HW_SakuraRC-H743                  2714
-=======
 AP_HW_StellarF4                      1500
 AP_HW_GEPRCF745BTHD                  1501
 
@@ -375,7 +360,6 @@ AP_HW_SakuraRC-H743                  2714
 # IDs 4200-4220 reserved for HAKRC
 AP_HW_HAKRC_F405                     4200
 AP_HW_HAKRC_F405Wing                 4201
->>>>>>> Copter-4.6.2
 
 # IDs 5000-5099 reserved for Carbonix
 # IDs 5100-5199 reserved for SYPAQ Systems
@@ -421,17 +405,12 @@ AP_HW_Holybro-PMU-F4                 5401
 AP_HW_Holybro-UM982-G4               5402
 AP_HW_Holybro-UM960-H7               5403
 AP_HW_Holybro-PERIPH-H7              5404
-<<<<<<< HEAD
-=======
 AP_HW_Holybro-DroneCAN-Airspeed      5405
 AP_HW_Holybro-KakuteF4-Wing          5406
->>>>>>> Copter-4.6.2
 
 #IDs 5501-5599 reserved for MATEKSYS
 AP_HW_MATEKH743SE                    5501
 
-<<<<<<< HEAD
-=======
 #IDs 5600-5699 reserved for ZeroOne
 AP_HW_ZeroOne_X6                     5600
 AP_HW_ZeroOne_PMU                    5601
@@ -447,13 +426,10 @@ AP_HW_DroneerF405                    5800
 #IDs 5810-5819 reserved for Brother Hobby
 AP_HW_BrotherHobbyH743               5810
 
->>>>>>> Copter-4.6.2
 # IDs 6000-6099 reserved for SpektreWorks
 
 # IDs 6600-6699 reserved for Eagle Eye Drones
 
-<<<<<<< HEAD
-=======
 # IDs 6900-6909 reserved for Easy Aerial
 
 # IDs 7000-7099 reserved for CUAV
@@ -468,7 +444,6 @@ AP_HW_AEROFOX_H7                     7110
 # please fill gaps in the above ranges rather than adding past ID #7199
 
 
->>>>>>> Copter-4.6.2
 # OpenDroneID enabled boards. Use 10000 + the base board ID
 AP_HW_CubeOrange_ODID               10140
 AP_HW_Pixhawk6_ODID                 10053

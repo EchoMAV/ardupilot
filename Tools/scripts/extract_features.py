@@ -269,11 +269,6 @@ class ExtractFeatures(object):
             ('AP_NETWORKING_CAN_MCAST_ENABLED', 'AP_Networking_CAN::start'),
             ('FORCE_APJ_DEFAULT_PARAMETERS', 'AP_Param::param_defaults_data'),
             ('HAL_BUTTON_ENABLED', 'AP_Button::update'),
-<<<<<<< HEAD
-            ('HAL_LOGGING_ENABLED', 'AP_Logger::Init'),
-            ('HAL_ENABLE_DRONECAN_DRIVERS', r'AP_DroneCAN::init'),
-            ('AP_OSD_LINK_STATS_EXTENSIONS_ENABLED', r'AP_OSD_Screen::draw_rc_tx_power'),
-=======
             ('HAL_LOGGING_ENABLED', 'AP_Logger::init'),
             ('AP_COMPASS_CALIBRATION_FIXED_YAW_ENABLED', 'Compass::mag_cal_fixed_yaw'),
             ('COMPASS_LEARN_ENABLED', 'CompassLearn::update'),
@@ -292,7 +287,6 @@ class ExtractFeatures(object):
             ('AP_QUICKTUNE_ENABLED', r'AP_Quicktune::update'),
             ('AP_CAN_LOGGING_ENABLED', r'AP_CANManager::can_logging_callback'),
             ('AP_PLANE_SYSTEMID_ENABLED', r'AP_SystemID::start'),
->>>>>>> Copter-4.6.2
         ]
 
     def progress(self, msg):

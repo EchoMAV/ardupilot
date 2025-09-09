@@ -27,12 +27,8 @@
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ardupilot_msgs</test_depend>
   <test_depend>ardupilot_sitl</test_depend>
-<<<<<<< HEAD
-  <test_depend>builtin_interfaces</test_depend>
-=======
   <exec_depend>builtin_interfaces</exec_depend>
   <exec_depend>geographic_msgs</exec_depend>
->>>>>>> Copter-4.6.2
   <test_depend>launch</test_depend>
   <test_depend>launch_pytest</test_depend>
   <test_depend>micro_ros_agent</test_depend>
@@ -41,11 +37,7 @@
   <test_depend>python3-pytest</test_depend>
   <test_depend>rclpy</test_depend>
   <test_depend>sensor_msgs</test_depend>
-<<<<<<< HEAD
-
-=======
   <test_depend>python3-scipy</test_depend>
->>>>>>> Copter-4.6.2
 
   <export>
     <build_type>ament_python</build_type>

@@ -1,9 +1,5 @@
 NET_ENABLE 1
-<<<<<<< HEAD
-NET_OPTIONS 1
-=======
 NET_OPTIONS 3
->>>>>>> Copter-4.6.2
 
 # enable hw flow control
 UART1_RTSCTS 1

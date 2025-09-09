@@ -3778,10 +3778,6 @@ AR_PosControl = {}
 function AR_PosControl:get_srate() end
 
 -- precision landing access
-<<<<<<< HEAD
----@class precland
-=======
->>>>>>> Copter-4.6.2
 precland = {}
 
 -- get Location of target or nil if target not acquired
@@ -3963,18 +3959,11 @@ function fs:stat(param1) end
 function fs:format() end
 
 -- Get the current status of a format. 0=NOT_STARTED, 1=PENDING, 2=IN_PROGRESS, 3=SUCCESS, 4=FAILURE
-<<<<<<< HEAD
----@return number
-function fs:get_format_status() end
-
--- Get crc32 checksum of a file with given name
-=======
 ---@return integer
 function fs:get_format_status() end
 
 -- Get crc32 checksum of a file with given name
 ---@param file_name string
->>>>>>> Copter-4.6.2
 ---@return uint32_t_ud|nil
 function fs:crc32(file_name) end
 
@@ -4009,8 +3998,6 @@ function visual_odom:healthy() end
 -- visual odometry quality as a percentage from 1 to 100 or 0 if unknown
 ---@return integer
 function visual_odom:quality() end
-<<<<<<< HEAD
-=======
 
 -- simulator specific bindings
 sim = {}
@@ -4023,4 +4010,3 @@ sim = {}
 ---@param gyro_rads Vector3f_ud -- gyro body rate in rad/s
 ---@return boolean
 function sim:set_pose(instance, loc, orient, velocity_bf, gyro_rads) end
->>>>>>> Copter-4.6.2

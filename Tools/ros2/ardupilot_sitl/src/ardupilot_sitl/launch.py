@@ -34,10 +34,6 @@ from .actions import ExecuteFunction
 TRUE_STRING = "True"
 FALSE_STRING = "False"
 BOOL_STRING_CHOICES = set([TRUE_STRING, FALSE_STRING])
-<<<<<<< HEAD
-=======
-
->>>>>>> Copter-4.6.2
 
 class VirtualPortsLaunch:
     """Launch functions for creating virtual ports using `socat`."""
@@ -373,23 +369,10 @@ class MAVProxyLaunch:
                 description="SITL output port.",
             ),
             DeclareLaunchArgument(
-<<<<<<< HEAD
-                "map",
-                default_value="False",
-                description="Enable MAVProxy Map.",
-                choices=BOOL_STRING_CHOICES
-            ),
-            DeclareLaunchArgument(
-                "console",
-                default_value="False",
-                description="Enable MAVProxy Console.",
-                choices=BOOL_STRING_CHOICES
-=======
                 "map", default_value="False", description="Enable MAVProxy Map.", choices=BOOL_STRING_CHOICES
             ),
             DeclareLaunchArgument(
                 "console", default_value="False", description="Enable MAVProxy Console.", choices=BOOL_STRING_CHOICES
->>>>>>> Copter-4.6.2
             ),
         ]
 

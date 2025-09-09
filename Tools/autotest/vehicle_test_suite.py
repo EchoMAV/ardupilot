@@ -2397,9 +2397,6 @@ class TestSuite(ABC):
                                        0,
                                        0)
 
-<<<<<<< HEAD
-    def reboot_sitl(self, required_bootcount=None, force=False, check_position=True):
-=======
     def reboot_sitl(self,
                     required_bootcount=None,
                     force=False,
@@ -2407,7 +2404,6 @@ class TestSuite(ABC):
                     mark_context=True,
                     startup_location_dist_max=1,
                     ):
->>>>>>> Copter-4.6.2
         """Reboot SITL instance and wait for it to reconnect."""
         if self.armed() and not force:
             raise NotAchievedException("Reboot attempted while armed")
@@ -2415,13 +2411,9 @@ class TestSuite(ABC):
         self.reboot_sitl_mav(required_bootcount=required_bootcount, force=force)
         self.do_heartbeats(force=True)
         if check_position and self.frame != 'sailboat':  # sailboats drift with wind!
-<<<<<<< HEAD
-            self.assert_simstate_location_is_at_startup_location()
-=======
             self.assert_simstate_location_is_at_startup_location(dist_max=startup_location_dist_max)
         if mark_context:
             self.context_get().reboot_sitl_was_done = True
->>>>>>> Copter-4.6.2
 
     def reboot_sitl_mavproxy(self, required_bootcount=None):
         """Reboot SITL instance using MAVProxy and wait for it to reconnect."""
@@ -2739,19 +2731,6 @@ class TestSuite(ABC):
             "SIM_VIB_FREQ_X",
             "SIM_VIB_FREQ_Y",
             "SIM_VIB_FREQ_Z",
-<<<<<<< HEAD
-            "SIM_VIB_MOT_HMNC",
-            "SIM_VIB_MOT_MASK",
-            "SIM_VIB_MOT_MAX",
-            "SIM_VIB_MOT_MULT",
-            "SIM_WAVE_AMP",
-            "SIM_WAVE_DIR",
-            "SIM_WAVE_ENABLE",
-            "SIM_WAVE_LENGTH",
-            "SIM_WAVE_SPEED",
-            "SIM_WIND_DIR_Z",
-=======
->>>>>>> Copter-4.6.2
         ])
 
         vinfo_key = self.vehicleinfo_key()
@@ -4771,11 +4750,7 @@ class TestSuite(ABC):
         self.context_push()
         self.set_parameters({
             "NET_ENABLE": 1,
-<<<<<<< HEAD
-            "LOG_DISARMED": 1,
-=======
             "LOG_DISARMED": 0,
->>>>>>> Copter-4.6.2
             "LOG_DARM_RATEMAX": 1, # make small logs
             # UDP client
             "NET_P1_TYPE": 1,
@@ -4812,8 +4787,6 @@ class TestSuite(ABC):
             })
         self.reboot_sitl()
 
-<<<<<<< HEAD
-=======
         # ensure the latest log file is very small:
         self.context_push()
         self.set_parameter('LOG_DISARMED', 1)
@@ -4825,7 +4798,6 @@ class TestSuite(ABC):
         # now, or MAVProxy does not see it as the latest log:
         self.wait_gps_fix_type_gte(3)
 
->>>>>>> Copter-4.6.2
         self.set_parameter('SIM_SPEEDUP', 1)
 
         endpoints = [('UDPClient', ':16001') ,
