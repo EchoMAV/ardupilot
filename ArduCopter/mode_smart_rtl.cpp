@@ -12,6 +12,7 @@
 bool ModeSmartRTL::init(bool ignore_checks)
 {
     if (g2.smart_rtl.is_active()) {
+        ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
         // initialise waypoint and spline controller
         wp_nav->wp_and_spline_init();
 

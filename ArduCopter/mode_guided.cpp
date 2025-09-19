@@ -35,6 +35,7 @@ struct Guided_Limit {
 // init - initialise guided controller
 bool ModeGuided::init(bool ignore_checks)
 {
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
     // start in velaccel control mode
     velaccel_control_start();
     guided_vel_target_cms.zero();

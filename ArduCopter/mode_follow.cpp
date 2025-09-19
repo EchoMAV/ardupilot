@@ -21,6 +21,8 @@ bool ModeFollow::init(const bool ignore_checks)
         return false;
     }
 
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+
 #if HAL_MOUNT_ENABLED
     AP_Mount *mount = AP_Mount::get_singleton();
     // follow the lead vehicle using sysid
