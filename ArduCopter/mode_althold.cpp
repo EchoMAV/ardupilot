@@ -9,8 +9,18 @@
 // althold_init - initialise althold controller
 bool ModeAltHold::init(bool ignore_checks)
 {
-    // set secondary source to baro to ensure altitude isn't limited by rangefinder or lack of GPS
-    ahrs.set_posvelyaw_source_set(SECONDARY_SOURCE);
+    // If going from optical flow -> alt hold we need to stay on tertiary source so IMU aiding is not lost
+    // If going from gps based mode -> alt hold we need to switch to baro to ensure altitude isn't limited by rangefinder but GPS IMU aiding is retained
+    switch (copter.flightmode->mode_number()) {  
+        case Mode::Number::FLOWHOLD:
+            ahrs.set_posvelyaw_source_set(AP_NavEKF_Source::TERTIARY_SOURCE);
+            gcs().send_text(MAV_SEVERITY_INFO, "Keeping tertiary EKF3 source.");
+            break;
+        default:
+            ahrs.set_posvelyaw_source_set(AP_NavEKF_Source::SECONDARY_SOURCE);
+            gcs().send_text(MAV_SEVERITY_INFO, "Setting EKF3 source to use baro.");
+            break;
+    }
 
     // initialise the vertical position controller
     if (!pos_control->is_active_z()) {
