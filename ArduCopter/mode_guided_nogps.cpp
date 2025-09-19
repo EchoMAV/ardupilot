@@ -10,7 +10,6 @@
 bool ModeGuidedNoGPS::init(bool ignore_checks)
 {
     // start in angle control mode
-    ahrs.set_posvelyaw_source_set(SECONDARY_SOURCE);
     ModeGuided::angle_control_start();
     return true;
 }

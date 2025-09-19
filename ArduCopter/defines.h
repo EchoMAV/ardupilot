@@ -16,8 +16,9 @@
 #define HELI_FRAME 2
 
 // EKF3 lane types
-#define PRIMARY_SOURCE 0 // GPS
-#define SECONDARY_SOURCE 1 // Optical Flow
+#define PRIMARY_SOURCE 0 // GPS based modes
+#define SECONDARY_SOURCE 1 // Alt Hold
+#define TERTIARY_SOURCE 2 // Optical Flow
 
 
 // Tuning enumeration

@@ -27,8 +27,8 @@ bool ModeFlowHold::init(bool ignore_checks)
 
 void ModeFlowHold::set_ekf3_source()
 {
-    // set secondary optical flow source for position control
-    ahrs.set_posvelyaw_source_set(SECONDARY_SOURCE);
+    // set tertiary optical flow source for position control
+    ahrs.set_posvelyaw_source_set(TERTIARY_SOURCE);
 }
 
 #endif
