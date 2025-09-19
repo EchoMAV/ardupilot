@@ -10,7 +10,7 @@
 bool ModeAltHold::init(bool ignore_checks)
 {
     // set primary source to ensure altitude isn't limited by rangefinder
-    ahrs.set_posvelyaw_source_set(SECONDARY_SOURCE);
+    ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
 
     // initialise the vertical position controller
     if (!pos_control->is_active_z()) {
