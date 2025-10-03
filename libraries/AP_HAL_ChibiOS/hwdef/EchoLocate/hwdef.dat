@@ -1,0 +1,30 @@
+# ===== Echo-style F303 GPS Peripheral =====
+# MCU & clocks
+MCU STM32F3xx STM32F303xx
+FLASH_SIZE_KB 256
+RAM_SIZE_KB 48
+OSCILLATOR_HZ 8000000
+
+# Toolchain/RTOS
+env OPTIMIZE -Os
+APJ_BOARD_ID 9999
+
+# ----- Peripherals -----
+SERIAL_ORDER USART2 USART1 USART3
+
+# u-blox GPS UART
+define HAL_UART2_TX PA2
+define HAL_UART2_RX PA3
+
+# CAN (bxCAN)
+define HAL_CAN1_TX PA12
+define HAL_CAN1_RX PA11
+
+# LEDs / Buzzer
+define LED_PIN PC13
+
+# ----- Build targets -----
+CHIBIOS_BOARD  generic
+AP_PERIPH 1
+
+# ----- End -----
