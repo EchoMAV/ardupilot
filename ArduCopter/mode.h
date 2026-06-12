@@ -1151,6 +1151,7 @@ protected:
     int32_t wp_bearing() const override;
     float crosstrack_error() const override { return pos_control->crosstrack_error();}
     virtual void set_ekf3_source();
+    virtual void set_gcs_fs_action();
 
 #if AC_PRECLAND_ENABLED
     bool do_precision_loiter();
@@ -1181,6 +1182,7 @@ protected:
     const char *name() const override { return "FLOWHOLD"; }
     const char *name4() const override { return "FHLD"; }
     void set_ekf3_source() override;
+    void set_gcs_fs_action() override;
 };
 
 class ModePosHold : public Mode {

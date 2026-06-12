@@ -31,4 +31,11 @@ void ModeFlowHold::set_ekf3_source()
     ahrs.set_posvelyaw_source_set(TERTIARY_SOURCE);
 }
 
+void ModeFlowHold::set_gcs_fs_action()
+{
+    // Set failsafe GCS to SmartRTL/Land (SmartRTL will work if there was valid GPS lock at some point, otherwise it will land)
+    g.failsafe_gcs.set(4);
+    gcs().send_text(MAV_SEVERITY_INFO, "FLOWHOLD: FS_GCS_ENABLE set to SmartRTL/Land");
+}
+
 #endif

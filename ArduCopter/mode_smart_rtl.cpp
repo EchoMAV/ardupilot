@@ -13,6 +13,9 @@ bool ModeSmartRTL::init(bool ignore_checks)
 {
     if (g2.smart_rtl.is_active()) {
         ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+        // Set failsafe GCS to RTL
+        g.failsafe_gcs.set(1);
+        gcs().send_text(MAV_SEVERITY_INFO, "LOITER: FS_GCS_ENABLE set to RTL");
         // initialise waypoint and spline controller
         wp_nav->wp_and_spline_init();
 

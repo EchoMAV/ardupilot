@@ -57,6 +57,10 @@ bool ModeAuto::init(bool ignore_checks)
         // reset flag indicating if pilot has applied roll or pitch inputs during landing
         copter.ap.land_repo_active = false;
 
+        // Set failsafe GCS to RTL
+        g.failsafe_gcs.set(1);
+        gcs().send_text(MAV_SEVERITY_INFO, "AUTO: FS_GCS_ENABLE set to RTL");
+
 #if AC_PRECLAND_ENABLED
         // initialise precland state machine
         copter.precland_statemachine.init();

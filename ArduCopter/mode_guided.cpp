@@ -36,6 +36,9 @@ struct Guided_Limit {
 bool ModeGuided::init(bool ignore_checks)
 {
     ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+    // Set failsafe GCS to RTL
+    g.failsafe_gcs.set(1);
+    gcs().send_text(MAV_SEVERITY_INFO, "GUIDED: FS_GCS_ENABLE set to RTL");
     // start in velaccel control mode
     velaccel_control_start();
     guided_vel_target_cms.zero();

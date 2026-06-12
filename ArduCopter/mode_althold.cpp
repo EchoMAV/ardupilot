@@ -31,6 +31,10 @@ bool ModeAltHold::init(bool ignore_checks)
     pos_control->set_max_speed_accel_z(-get_pilot_speed_dn(), g.pilot_speed_up, g.pilot_accel_z);
     pos_control->set_correction_speed_accel_z(-get_pilot_speed_dn(), g.pilot_speed_up, g.pilot_accel_z);
 
+    // Set failsafe GCS to SmartRTL/Land (SmartRTL will work if there was valid GPS lock at some point, otherwise it will land)
+    g.failsafe_gcs.set(4);
+    gcs().send_text(MAV_SEVERITY_INFO, "ALT_HOLD: FS_GCS_ENABLE set to SmartRTL/Land");
+
     return true;
 }
 

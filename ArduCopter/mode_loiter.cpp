@@ -36,6 +36,7 @@ bool ModeLoiter::init(bool ignore_checks)
     // set vertical speed and acceleration limits
     pos_control->set_max_speed_accel_z(-get_pilot_speed_dn(), g.pilot_speed_up, g.pilot_accel_z);
     pos_control->set_correction_speed_accel_z(-get_pilot_speed_dn(), g.pilot_speed_up, g.pilot_accel_z);
+    set_gcs_fs_action();
 
 #if AC_PRECLAND_ENABLED
     _precision_loiter_active = false;
@@ -48,6 +49,13 @@ void ModeLoiter::set_ekf3_source()
 {
     // set primary GPS source for position control
     ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
+}
+
+void ModeLoiter::set_gcs_fs_action()
+{
+    // Set failsafe GCS to RTL
+    g.failsafe_gcs.set(1);
+    gcs().send_text(MAV_SEVERITY_INFO, "LOITER: FS_GCS_ENABLE set to RTL");
 }
 
 #if AC_PRECLAND_ENABLED

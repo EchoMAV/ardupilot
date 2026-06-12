@@ -23,6 +23,10 @@ bool ModeFollow::init(const bool ignore_checks)
 
     ahrs.set_posvelyaw_source_set(PRIMARY_SOURCE);
 
+    // Set failsafe GCS to RTL
+    g.failsafe_gcs.set(1);
+    gcs().send_text(MAV_SEVERITY_INFO, "FOLLOW: FS_GCS_ENABLE set to RTL");
+
 #if HAL_MOUNT_ENABLED
     AP_Mount *mount = AP_Mount::get_singleton();
     // follow the lead vehicle using sysid
